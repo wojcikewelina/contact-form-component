@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import './ContactComponentStyle.scss';
 
 const ContactUs = () => {
   //Przygotowałam formularz z wykorzystaniem emailjs.com //
@@ -53,10 +54,10 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
+    <div className="contact-form">
       <h3>Contact us</h3>
       <form ref={form} onSubmit={sendEmail}>
-        <div>
+        <div className="input-element">
           <label>Name</label>
           <input
             type="text"
@@ -65,7 +66,7 @@ const ContactUs = () => {
             value={name}
           />
         </div>
-        <div>
+        <div className="input-element">
           <label>Telefon</label>
           <input
             type="tel"
@@ -74,7 +75,7 @@ const ContactUs = () => {
             value={phone}
           />
         </div>
-        <div>
+        <div className="input-element">
           <label>Email</label>
           <input
             type="email"
@@ -83,7 +84,7 @@ const ContactUs = () => {
             value={email}
           />
         </div>
-        <div>
+        <div className="input-element">
           <label>Message</label>
           <textarea
             name="message"
@@ -92,7 +93,7 @@ const ContactUs = () => {
           />
         </div>
         <div>
-          <input type="submit" value="Send" />
+          <input className="submit-button" type="submit" value="Send" />
         </div>
       </form>
     </div>
