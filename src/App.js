@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
-
+import ContactUs from '../components/contactComponent/ContactComponent';
 
 export default function App() {
   return (
     <div>
       <h1>
-
-        <span>contact us</span>
+        <ContactUs />
+     
       </h1>
     </div>
   );
