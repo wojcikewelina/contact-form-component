@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
-const ContactUs = () => {
 
+const ContactUs = () => {
   //Przygotowałam formularz z wykorzystaniem emailjs.com //
 
   const form = useRef();
-  
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +28,6 @@ const ContactUs = () => {
   };
 
   const sendEmail = (e) => {
-    
     e.preventDefault();
     emailjs
       .sendForm(
