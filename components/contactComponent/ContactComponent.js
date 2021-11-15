@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 const ContactUs = () => {
   const form = useRef();
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -31,18 +35,25 @@ const ContactUs = () => {
       <form ref={form} onSubmit={sendEmail}>
         <div>
           <label>Name</label>
-          <input type="text" name="name" />
+          <input
+            type="text"
+            name="name"
+            onChange={(e) => {
+              setName(e.target.value);
+              console.log(name);
+            }}
+          />
         </div>
         <div>
           <label>Email</label>
-          <input type="email" name="email" />
+          <input type="email" name={name} />
         </div>
         <div>
           <label>Message</label>
           <textarea name="message" />
         </div>
         <div>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send"  />
         </div>
       </form>
     </div>
